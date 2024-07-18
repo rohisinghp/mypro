@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const product={
+            name: 'socks',      //property value pairs
+            price: 1010,
+            ['delivery-time']:'1 april',
+            rating: {
+                stars: 4.5,         //Nested object;
+                count: 83
+            }
+        };
+        console.log(product);
+
+        console.log(product.price);
+        console.log(product['price']); //bracket notation- it is used when dot natation usually dont work
+        console.log(product['delivery-time'])
+
+        product.price=1090;       
+        console.log(product.price);
+
+        product.no_of_socks = 3; //add a new property;
+        console.log(product);
+
+        delete product.price;       //deleting the propertty
+        console.log(product);
+
+        console.log(product.rating.count)
+
+        // JASON - Javascript object notation 
+        //         similar to java script object but has less features(there is no function cupport, json does not support single courts);
+        //      json is more univarsal 
+        // 
+
+        console.log(typeof(JSON.stringify(product)));   //string  (converts javascript object into the string)
+
+        const jsonstring = JSON.stringify(product);
+        console.log(JSON.parse(jsonstring));    //converts string into javascript object;
+   </script>
+</body>
+</html>
