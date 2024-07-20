@@ -54,18 +54,26 @@
         console.log(typeof(JSON.stringify(product2)));      //string
         console.log(typeof(product2));  //object
 
-        product3 = JSON.stringify(product2);     // This will be only a reference variable not a copy of the variable
-        
+        product3 = JSON.stringify(product2);    
         console.log(typeof(product3));      //string
         product3 = JSON.parse(product3);
         console.log(typeof(product3));      //object
 
-        console.log(product);
-        console.log(product2);
-        console.log(product3);
+        object=product           // This will be only a reference variable not a copy of the variable
+
+
+        // If i will change something on product  it will also reflects on the object variable;
+        // this is callled reference variable ;
+
+        console.log('this is something new');
+        console.log(object);
+        product.name='pants';
+        console.log(object);
 
         console.log('hello'.length);
         console.log('hello'.toUpperCase());
+
+        
 
 
 

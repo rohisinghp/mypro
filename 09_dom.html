@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button class="js-subs" onclick="
+        fun();
+        ">subscribe</button><br><br>
+
+        <p>enter the cost of the  item </p>
+        <input type="text" class="js-input" onkeydown="
+        console.log(event.key);                                //event 
+        if(event.key == 'Enter'){
+            fun1();
+        }
+        ">
+        <button class="js-btn" onclick="
+         fun1();
+        ">Calculate</button>
+        <p class="js-result"></p>
+       
+    <script>
+
+        function fun(){
+    //    console.log(document.querySelector('.js-subs'));
+
+        const buttonElement=document.querySelector('.js-subs');
+        if(buttonElement.innerText === 'subscribe'){
+        buttonElement.innerHTML='subscribed';
+        }
+         else{
+            buttonElement.innerHTML='subscribe';
+         }                                                               // .innertext='hello';         
+        }
+
+        function fun1(){
+               let inpt=(document.querySelector('.js-input'));
+               let cost= Number(inpt.value);
+               if(cost <= 25){
+                  cost=cost+10;
+               }
+               console.log(cost);
+
+               document.querySelector('.js-result').innerHTML=cost;
+
+
+        }
+
+        // How to convert a string into a number and number t0 the string . here we learn the different ways of dooing this -->
+
+        String(24);     //conert a number into string
+        console.log('25' - 5);      //(TYPE COERCION )if a string only contains numbers then it is possible to do -,/,* operations on it //it is not reccomonded
+        console.log('25' + 5);
+    </script>
+</body>
+</html>
